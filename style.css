@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    color: #5b3444;
+    background:
+        radial-gradient(circle at 15% 15%, rgba(255, 182, 193, 0.55), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(255, 218, 185, 0.55), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(246, 190, 210, 0.45), transparent 35%),
+        linear-gradient(135deg, #fff8f5, #ffeef4, #fff5ef);
+
+    overflow-x: hidden;
+}
+
+/* Brillitos de fondo */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    filter: blur(70px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+body::before {
+    background: rgba(255, 150, 180, 0.20);
+    top: -100px;
+    left: -100px;
+}
+
+body::after {
+    background: rgba(255, 205, 160, 0.20);
+    bottom: -100px;
+    right: -100px;
+}
+
+/* Pantallas */
+
+.pantalla {
+    display: none;
+    min-height: 100vh;
+    width: 100%;
+    padding: 30px 20px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.pantalla.activa {
+    display: flex;
+    animation: aparecer 0.8s ease;
+}
+
+/* Tarjeta principal */
+
+.contenido {
+    width: min(92%, 620px);
+    padding: 48px 38px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.85);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(158, 79, 107, 0.15),
+        0 5px 20px rgba(255, 150, 180, 0.10);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+/* Pequeño detalle superior */
+
+.contenido::before {
+    content: "♡";
+    display: block;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+
+    color: #e98da8;
+
+    margin-bottom: 12px;
+
+    animation: latido 2s infinite;
+}
+
+/* Títulos */
+
+h1,
+h2 {
+    font-family: 'Playfair Display', serif;
+    color: #8f405c;
+    line-height: 1.15;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 7vw, 3.8rem);
+    margin-bottom: 18px;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    margin-bottom: 20px;
+}
+
+/* Texto */
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #704d5a;
+    margin-bottom: 25px;
+}
+
+.destacado {
+    color: #c65d7d;
+    font-weight: 600;
+}
+
+/* Nombre Yaya */
+
+.nombre {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.2rem, 12vw, 5.5rem);
+
+    color: #d65f83;
+
+    margin: 5px 0 20px;
+
+    text-shadow:
+        0 5px 20px rgba(214, 95, 131, 0.18);
+
+    animation: suave 3s ease-in-out infinite;
+}
+
+/* Botones */
+
+button {
+    border: none;
+    cursor: pointer;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+
+    padding: 15px 28px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #e87599,
+        #d85d82
+    );
+
+    box-shadow:
+        0 10px 25px rgba(216, 93, 130, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 15px 30px rgba(216, 93, 130, 0.32);
+
+    filter: brightness(1.04);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* Botón secundario */
+
+.btn-secundario {
+    color: #a64c69;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    border: 1px solid rgba(214, 95, 131, 0.25);
+
+    box-shadow:
+        0 8px 20px rgba(150, 80, 105, 0.08);
+}
+
+/* Botones Sí / No */
+
+.botones-amor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+}
+
+#btnSi {
+    background: linear-gradient(
+        135deg,
+        #e86f96,
+        #cf4f78
+    );
+
+    padding: 16px 35px;
+
+    font-size: 1.1rem;
+}
+
+#btnNo {
+    background: rgba(255, 255, 255, 0.8);
+
+    color: #9b6074;
+
+    border: 1px solid rgba(180, 100, 125, 0.20);
+
+    box-shadow:
+        0 6px 15px rgba(120, 70, 90, 0.08);
+}
+
+/* Mensajes */
+
+#mensajeNo {
+    min-height: 30px;
+
+    margin-top: 18px;
+
+    color: #c75d7c;
+
+    font-weight: 600;
+
+    font-size: 0.95rem;
+}
+
+/* Separador */
+
+.separador {
+    width: 70px;
+    height: 2px;
+
+    margin: 20px auto 25px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #e88aa5,
+        transparent
+    );
+}
+
+/* Corazones del fondo */
+
+#corazones {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: -1;
+}
+
+/* Animaciones */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes latido {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+@keyframes suave {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes desaparecer {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(-30px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Celular */
+
+@media (max-width: 600px) {
+
+    .pantalla {
+        padding: 20px 14px;
+    }
+
+    .contenido {
+        width: 100%;
+        padding: 38px 22px;
+
+        border-radius: 26px;
+    }
+
+    p {
+        font-size: 0.98rem;
+        line-height: 1.7;
+    }
+
+    button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .botones-amor {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    #btnSi,
+    #btnNo {
+        width: 85%;
+    }
+}
