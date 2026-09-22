@@ -2,12 +2,12 @@ let pantallaActual = 1;
 let intentosNo = 0;
 
 const mensajesNo = [
-    "¿Segura? 👀",
-    "Yaya... piénsalo otra vez 🥺",
-    "Creo que apretaste el botón equivocado 😂",
-    "Ese botón no te conviene 😌",
-    "Última oportunidad... 👀❤️",
-    "Bueno... ese botón desaparece 😤❤️"
+    "¿Segura?",
+    "Rivas... piénsalo otra vez",
+    "Creo que apretaste el botón equivocado",
+    "Ese botón no te conviene la vdd",
+    "Última oportunidad...",
+    "Bueno... ese botón desaparece"
 ];
 
 function mostrarPantalla(numero) {
